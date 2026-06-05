@@ -5,7 +5,7 @@
 class DataLoader {
     static async loadClimateEvents() {
         try {
-            const response = await fetch('data/events/climate-events.json');
+            const response = await fetch('../data/events/climate-events.json');
             const data = await response.json();
             console.log('✓ 气候事件已加载');
             return data;
@@ -17,7 +17,7 @@ class DataLoader {
 
     static async loadAgriculturalCrisis() {
         try {
-            const response = await fetch('data/events/agricultural-crisis.json');
+            const response = await fetch('../data/events/agricultural-crisis.json');
             const data = await response.json();
             console.log('✓ 农业危机已加载');
             return data;
@@ -29,7 +29,7 @@ class DataLoader {
 
     static async loadSocialCrisis() {
         try {
-            const response = await fetch('data/events/social-crisis.json');
+            const response = await fetch('../data/events/social-crisis.json');
             const data = await response.json();
             console.log('✓ 社会动荡已加载');
             return data;
@@ -41,7 +41,7 @@ class DataLoader {
 
     static async loadPoliticalEvents() {
         try {
-            const response = await fetch('data/events/political-events.json');
+            const response = await fetch('../data/events/political-events.json');
             const data = await response.json();
             console.log('✓ 政治事件已加载');
             return data;

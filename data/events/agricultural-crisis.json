@@ -1,0 +1,98 @@
+{
+  "agricultural_crisis_events": [
+    {
+      "id": "agri_1300",
+      "year": 1300,
+      "linked_climate": "climate_1300_01",
+      "crop_damage_rate": 0.65,
+      "primary_crops_affected": ["wheat", "millet", "barley"],
+      "estimated_loss_tons": 5000000,
+      "affected_population": 1200000,
+      "regions": [
+        {
+          "name": "陕西",
+          "damage_rate": 0.70,
+          "population_affected": 400000
+        },
+        {
+          "name": "河南",
+          "damage_rate": 0.60,
+          "population_affected": 500000
+        },
+        {
+          "name": "山西",
+          "damage_rate": 0.65,
+          "population_affected": 300000
+        }
+      ],
+      "famine_indicators": {
+        "malnutrition_rate": 0.55,
+        "mortality_rate": 0.08
+      },
+      "description": "广泛的农业减产导致大范围饥荒"
+    },
+    {
+      "id": "agri_1642",
+      "year": 1642,
+      "linked_climate": "climate_1640_01",
+      "crop_damage_rate": 0.85,
+      "primary_crops_affected": ["winter_wheat", "millet"],
+      "estimated_loss_tons": 12000000,
+      "affected_population": 2000000,
+      "regions": [
+        {
+          "name": "陕西",
+          "damage_rate": 0.90,
+          "population_affected": 800000
+        },
+        {
+          "name": "河南",
+          "damage_rate": 0.80,
+          "population_affected": 750000
+        },
+        {
+          "name": "山西",
+          "damage_rate": 0.85,
+          "population_affected": 450000
+        }
+      ],
+      "famine_indicators": {
+        "malnutrition_rate": 0.72,
+        "mortality_rate": 0.15
+      },
+      "description": "创纪录的农业危机，华北农业体系几乎崩溃"
+    },
+    {
+      "id": "agri_1815",
+      "year": 1815,
+      "linked_climate": "climate_1815_01",
+      "crop_damage_rate": 0.75,
+      "primary_crops_affected": ["rice", "wheat"],
+      "estimated_loss_tons": 9000000,
+      "affected_population": 1500000,
+      "regions": [
+        {
+          "name": "华北",
+          "damage_rate": 0.78,
+          "population_affected": 800000
+        },
+        {
+          "name": "长江流域",
+          "damage_rate": 0.72,
+          "population_affected": 700000
+        }
+      ],
+      "famine_indicators": {
+        "malnutrition_rate": 0.65,
+        "mortality_rate": 0.12
+      },
+      "description": "火山冬年导致全国农业危机"
+    }
+  ],
+  "metadata": {
+    "total_events": 3,
+    "coverage_years": "1300-1850",
+    "data_source": "农业史研究、地方志记录",
+    "last_updated": "2026-01-15"
+  }
+}

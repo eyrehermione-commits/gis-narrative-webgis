@@ -1,0 +1,38 @@
+{
+  "name": "gis-narrative-webgis",
+  "version": "1.0.0",
+  "description": "地理叙事融合的WebGIS平台 - 小冰河期与明清危机案例研究",
+  "main": "src/js/app.js",
+  "author": "Geo-Narrative Research Lab",
+  "license": "Private",
+  "scripts": {
+    "start": "python -m http.server 8000 --directory .",
+    "dev": "python -m http.server 8000 --directory . --bind 127.0.0.1",
+    "build": "echo 'Build process - to be implemented'",
+    "analyze": "python analysis/spatial-analysis.py",
+    "generate-data": "python analysis/generate-sample-data.py"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "d3": "^7.8.5",
+    "anime": "^3.2.1"
+  },
+  "devDependencies": {
+    "python": "^3.8.0"
+  },
+  "keywords": [
+    "GIS",
+    "WebGIS",
+    "narrative",
+    "spatial-analysis",
+    "climate-history",
+    "Little-Ice-Age",
+    "geography",
+    "digital-humanities"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eyrehermione-commits/gis-narrative-webgis"
+  },
+  "browsers": true
+}

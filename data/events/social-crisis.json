@@ -1,0 +1,166 @@
+{
+  "social_crisis_events": [
+    {
+      "id": "social_1300",
+      "year": 1300,
+      "linked_agricultural": "agri_1300",
+      "refugee_count": 300000,
+      "refugee_origins": ["陕西", "河南", "山西"],
+      "migration_routes": [
+        {
+          "from": [109.5, 34.4],
+          "to": [116.4, 39.9],
+          "name": "华北→北京方向",
+          "refugee_count": 150000,
+          "duration_days": 120
+        },
+        {
+          "from": [113, 34.8],
+          "to": [120.2, 30.3],
+          "name": "河南→南方",
+          "refugee_count": 150000,
+          "duration_days": 90
+        }
+      ],
+      "social_instability": {
+        "banditry_incidents": 280,
+        "disease_outbreaks": 8,
+        "crime_increase_percent": 180
+      },
+      "uprisings_triggered": [
+        {
+          "id": "uprising_1_1300",
+          "name": "元末红巾军",
+          "origin": [111.2, 37.9],
+          "region": "陕西",
+          "start_date": "1300-08-15",
+          "initial_force": 35000,
+          "motivation": "饥荒与税收压迫"
+        }
+      ],
+      "description": "大规模难民潮与社会秩序崩坏"
+    },
+    {
+      "id": "social_1642",
+      "year": 1642,
+      "linked_agricultural": "agri_1642",
+      "refugee_count": 500000,
+      "refugee_origins": ["陕西", "河南", "山西", "河北"],
+      "migration_routes": [
+        {
+          "from": [109.5, 34.4],
+          "to": [116.4, 39.9],
+          "name": "陕西→北京",
+          "refugee_count": 120000,
+          "duration_days": 120
+        },
+        {
+          "from": [113, 34.8],
+          "to": [120.2, 30.3],
+          "name": "河南→江南",
+          "refugee_count": 180000,
+          "duration_days": 90
+        },
+        {
+          "from": [112.5, 37.9],
+          "to": [116.4, 35.5],
+          "name": "山西→河北→华北",
+          "refugee_count": 100000,
+          "duration_days": 110
+        },
+        {
+          "from": [108, 32],
+          "to": [103, 30],
+          "name": "陕西东→四川",
+          "refugee_count": 100000,
+          "duration_days": 100
+        }
+      ],
+      "social_instability": {
+        "banditry_incidents": 450,
+        "disease_outbreaks": 12,
+        "crime_increase_percent": 240
+      },
+      "uprisings_triggered": [
+        {
+          "id": "uprising_li_zicheng",
+          "name": "闯王李自成起义",
+          "origin": [111.2, 37.9],
+          "region": "陕西榆林",
+          "start_date": "1642-12-01",
+          "initial_force": 50000,
+          "motivation": "饥荒、逃兵、流民",
+          "peak_force": 500000,
+          "peak_year": 1644
+        },
+        {
+          "id": "uprising_zhang_xianzhong",
+          "name": "张献忠起义",
+          "origin": [105.5, 29.8],
+          "region": "四川保宁",
+          "start_date": "1643-03-15",
+          "initial_force": 80000,
+          "motivation": "陕西难民南下",
+          "peak_force": 600000,
+          "peak_year": 1643
+        },
+        {
+          "id": "uprising_gao_yingxiang",
+          "name": "高迎祥起义",
+          "origin": [111.8, 36.2],
+          "region": "陕西中部",
+          "start_date": "1642-10-15",
+          "initial_force": 40000,
+          "motivation": "农民与土匪联合"
+        }
+      ],
+      "description": "明末农民战争全面爆发，多股起义力量并行"
+    },
+    {
+      "id": "social_1815",
+      "year": 1815,
+      "linked_agricultural": "agri_1815",
+      "refugee_count": 350000,
+      "refugee_origins": ["华北", "长江流域"],
+      "migration_routes": [
+        {
+          "from": [108, 35],
+          "to": [120, 28],
+          "name": "华北→东南",
+          "refugee_count": 200000,
+          "duration_days": 100
+        },
+        {
+          "from": [114, 30],
+          "to": [118, 32],
+          "name": "内陆→沿海",
+          "refugee_count": 150000,
+          "duration_days": 80
+        }
+      ],
+      "social_instability": {
+        "banditry_incidents": 350,
+        "disease_outbreaks": 15,
+        "crime_increase_percent": 200
+      },
+      "uprisings_triggered": [
+        {
+          "id": "uprising_tianli",
+          "name": "天理教起义",
+          "origin": [114.5, 38.4],
+          "region": "河北中部",
+          "start_date": "1815-06-01",
+          "initial_force": 30000,
+          "motivation": "饥荒与宗教结合"
+        }
+      ],
+      "description": "清末社会危机预兆，宗教与农民起义结合"
+    }
+  ],
+  "metadata": {
+    "total_events": 3,
+    "coverage_years": "1300-1850",
+    "data_source": "《明史》、《清实录》、地方志",
+    "last_updated": "2026-01-15"
+  }
+}

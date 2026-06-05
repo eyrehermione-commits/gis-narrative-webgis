@@ -1,0 +1,103 @@
+{
+  "political_events": [
+    {
+      "id": "political_1300_01",
+      "year": 1300,
+      "event_type": "dynastic_pressure",
+      "description": "元朝统治基础动摇，地方军阀势力上升",
+      "stability_index": 4,
+      "government_control_rate": 0.65,
+      "key_locations": ["京城", "陕西", "河南"],
+      "consequences": "为元末农民起义创造条件"
+    },
+    {
+      "id": "political_1350_01",
+      "year": 1350,
+      "event_type": "dynastic_collapse",
+      "description": "元末农民起义全面爆发",
+      "stability_index": 2,
+      "government_control_rate": 0.35,
+      "controlled_regions": ["京城周边", "长江中游"],
+      "lost_regions": ["陕西", "河南", "山西", "华北大部"],
+      "regime_response": "military_insufficient",
+      "consequence": "元朝最终灭亡（1368年）"
+    },
+    {
+      "id": "political_1640_01",
+      "year": 1640,
+      "event_type": "regime_instability",
+      "description": "崇祯帝登基，明朝已陷入衰退",
+      "stability_index": 4.5,
+      "government_control_rate": 0.75,
+      "financial_crisis": true,
+      "tax_collection_rate": 0.45,
+      "military_strength": "declining"
+    },
+    {
+      "id": "political_1642_01",
+      "year": 1642,
+      "event_type": "crisis_escalation",
+      "description": "农民战争激化，官府控制力快速下滑",
+      "stability_index": 2.5,
+      "government_control_rate": 0.35,
+      "controlled_regions": ["南京周边", "浙江", "福建"],
+      "lost_regions": ["陕西", "河南", "山西", "湖北", "四川"],
+      "military_balance": "rebel_advantage",
+      "officials_deserted": 1200,
+      "provincial_capitals_lost": 8,
+      "key_events": [
+        {
+          "date": "1642-12-01",
+          "event": "李自成起义扩大"
+        },
+        {
+          "date": "1643-05-20",
+          "event": "开封被围困",
+          "outcome": "城市陷落"
+        }
+      ]
+    },
+    {
+      "id": "political_1644_01",
+      "year": 1644,
+      "event_type": "regime_collapse",
+      "description": "农民战争彻底瓦解明朝官僚体系，清军入关",
+      "stability_index": 1,
+      "government_control_rate": 0.05,
+      "key_events": [
+        {
+          "date": "1644-04-25",
+          "event": "李自成攻占北京"
+        },
+        {
+          "date": "1644-06-05",
+          "event": "清军入关，大顺政权瓦解"
+        }
+      ],
+      "regime_outcome": "dynasty_changed",
+      "consequence": "大明帝国灭亡，清朝入关"
+    },
+    {
+      "id": "political_1815_01",
+      "year": 1815,
+      "event_type": "long_term_impact",
+      "description": "康乾盛世后，清朝衰退开始显现",
+      "stability_index": 5.5,
+      "government_control_rate": 0.72,
+      "emerging_problems": [
+        "人口压力",
+        "官僚腐败",
+        "频繁的反复",
+        "经济停滞"
+      ],
+      "consequence": "为天理教、白莲教起义奠定基础"
+    }
+  ],
+  "metadata": {
+    "total_events": 6,
+    "time_span": "1300-1850年",
+    "stability_scale": "1-10（10为最稳定）",
+    "data_source": "《明史》、《清实录》、政治史研究",
+    "last_updated": "2026-01-15"
+  }
+}

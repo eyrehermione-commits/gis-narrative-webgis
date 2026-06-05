@@ -39,7 +39,7 @@ class NarrativeWebGIS {
     async loadData() {
         try {
             // 加载气候事件数据
-            const climateResponse = await fetch('data/events/climate-events.json');
+            const climateResponse = await fetch('../data/events/climate-events.json');
             const climateData = await climateResponse.json();
             this.narrativeData.climate = climateData.climate_events;
             console.log('✓ 气候事件数据已加载:', this.narrativeData.climate.length, '条');

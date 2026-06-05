@@ -269,14 +269,21 @@ class NarrativeWebGIS {
      */
     playNarrativeAnimation() {
         console.log('▶ 开始播放叙事动画...');
+       // 【新增代码 1】：如果当前已经有动画在播放，先停掉旧的，防止重叠！
+        if (this.playInterval) {
+            clearInterval(this.playInterval);
+        }
         
         const startYear = 1300;
         const endYear = 1650;
         let currentYear = startYear;
 
-        const playInterval = setInterval(() => {
+        // 【修改代码 2】：将 setInterval 赋值给类的属性 this.playInterval
+        this.playInterval = setInterval(() => {
             if (currentYear >= endYear) {
-                clearInterval(playInterval);
+                // 【修改代码 3】：清理定时器
+                clearInterval(this.playInterval);
+                this.playInterval = null; // 状态重置
                 console.log('✓ 动画播放完成');
                 return;
             }

@@ -1,0 +1,32 @@
+# .gitignore
+# 忽略系统文件
+.DS_Store
+Thumbs.db
+*.log
+
+# 忽略依赖
+node_modules/
+__pycache__/
+*.pyc
+.Python
+
+# 忽略IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 忽略临时文件
+*.tmp
+temp/
+.cache/
+
+# 忽略个人配置
+config.local.json
+.env
+
+# 但保留数据和源代码
+!data/
+!src/
+!analysis/
+!docs/

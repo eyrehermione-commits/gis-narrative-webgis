@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地理叙事WebGIS平台 - 小冰河期案例</title>
+    
+    <!-- Leaflet.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    
+    <!-- D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/symbols.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🗺️ 地理叙事WebGIS平台</h1>
+                <p>小冰河期（1300-1850年）与明清社会危机的时空关联分析</p>
+            </div>
+            <div class="header-controls">
+                <button id="btn-play-narrative" class="btn btn-primary">▶ 播放叙事</button>
+                <button id="btn-analysis" class="btn btn-secondary">📊 空间分析</button>
+                <button id="btn-help" class="btn btn-tertiary">❓ 帮助</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-container">
+            <!-- Left Panel: Narrative & Timeline -->
+            <div class="left-panel">
+                <div class="panel-header">
+                    <h3>📖 叙事链条</h3>
+                </div>
+                <div class="narrative-container">
+                    <div class="narrative-stage" id="stage-climate">
+                        <div class="stage-icon">❄️</div>
+                        <h4>气候异常</h4>
+                        <p id="stage-climate-text">选择一个事件查看详情...</p>
+                    </div>
+                    <div class="narrative-arrow">→</div>
+                    <div class="narrative-stage" id="stage-agriculture">
+                        <div class="stage-icon">🌾</div>
+                        <h4>农业危机</h4>
+                        <p id="stage-agriculture-text">选择一个事件查看详情...</p>
+                    </div>
+                    <div class="narrative-arrow">→</div>
+                    <div class="narrative-stage" id="stage-social">
+                        <div class="stage-icon">👥</div>
+                        <h4>社会动荡</h4>
+                        <p id="stage-social-text">选择一个事件查看详情...</p>
+                    </div>
+                    <div class="narrative-arrow">→</div>
+                    <div class="narrative-stage" id="stage-political">
+                        <div class="stage-icon">👑</div>
+                        <h4>政权危机</h4>
+                        <p id="stage-political-text">选择一个事件查看详情...</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Slider -->
+                <div class="timeline-section">
+                    <h4>📅 时间轴（年份）</h4>
+                    <input type="range" id="timeline-slider" min="1300" max="1850" value="1642" class="timeline-slider">
+                    <div class="timeline-display">
+                        <span id="year-display">1642年</span>
+                        <span id="event-count-display">(3个事件)</span>
+                    </div>
+                </div>
+
+                <!-- Events List -->
+                <div class="events-list-section">
+                    <h4>📌 当前年份事件</h4>
+                    <div id="events-list" class="events-list">
+                        <!-- 动态生成 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center: Interactive Map -->
+            <div class="center-panel">
+                <div id="map" class="map-container"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-icon climate-icon">❄️</span>
+                        <span>气候事件</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon agricultural-icon">🌾</span>
+                        <span>农业危机</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon social-icon">👥</span>
+                        <span>起义</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon political-icon">👑</span>
+                        <span>政治事件</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Analysis & Details -->
+            <div class="right-panel">
+                <div class="panel-header">
+                    <h3>📊 分析结果</h3>
+                </div>
+                
+                <!-- Analysis Tabs -->
+                <div class="analysis-tabs">
+                    <button class="tab-btn active" data-tab="correlations">关联性</button>
+                    <button class="tab-btn" data-tab="spatial">空间</button>
+                    <button class="tab-btn" data-tab="temporal">时间</button>
+                </div>
+
+                <!-- Correlations Tab -->
+                <div class="tab-content active" id="tab-correlations">
+                    <div class="analysis-card">
+                        <h4>🔗 气候-起义关联度</h4>
+                        <div class="correlation-bar">
+                            <div class="correlation-value" style="width: 82%;">0.82</div>
+                        </div>
+                        <p class="correlation-text">强关联 | 气候恶化后90-180天内起义数量增加2.3倍</p>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h4>🌾 农业-难民关联度</h4>
+                        <div class="correlation-bar">
+                            <div class="correlation-value" style="width: 91%;">0.91</div>
+                        </div>
+                        <p class="correlation-text">极强关联 | 作物减产与难民数量高度同步</p>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h4>📉 社会-政治关联度</h4>
+                        <div class="correlation-bar">
+                            <div class="correlation-value" style="width: 74%;">0.74</div>
+                        </div>
+                        <p class="correlation-text">中等关联 | 起义规模与官府控制力呈反向关系</p>
+                    </div>
+                </div>
+
+                <!-- Spatial Tab -->
+                <div class="tab-content" id="tab-spatial">
+                    <div class="analysis-card">
+                        <h4>🗺️ 空间重叠度分析</h4>
+                        <svg width="100%" height="150" class="spatial-diagram">
+                            <circle cx="50" cy="75" r="40" fill="rgba(100, 150, 255, 0.2)" stroke="#6496FF" stroke-width="2" />
+                            <circle cx="120" cy="75" r="40" fill="rgba(255, 150, 100, 0.2)" stroke="#FF9664" stroke-width="2" />
+                            <circle cx="85" cy="30" r="40" fill="rgba(150, 255, 100, 0.2)" stroke="#96FF64" stroke-width="2" />
+                            <text x="50" y="78" text-anchor="middle" font-size="10">气候</text>
+                            <text x="120" y="78" text-anchor="middle" font-size="10">农业</text>
+                            <text x="85" y="35" text-anchor="middle" font-size="10">起义</text>
+                        </svg>
+                        <p class="analysis-text">高耦合区域：陕西中部与河南北部<br>空间重叠度：68% | 关键转折带</p>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h4>📍 缓冲区分析（50km内起义数）</h4>
+                        <table class="analysis-table">
+                            <tr>
+                                <th>地点</th>
+                                <th>起义数</th>
+                                <th>人口</th>
+                            </tr>
+                            <tr>
+                                <td>陕西中部</td>
+                                <td>23</td>
+                                <td>12万</td>
+                            </tr>
+                            <tr>
+                                <td>河南北部</td>
+                                <td>18</td>
+                                <td>9.5万</td>
+                            </tr>
+                            <tr>
+                                <td>山西南部</td>
+                                <td>14</td>
+                                <td>7.2万</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Temporal Tab -->
+                <div class="tab-content" id="tab-temporal">
+                    <div class="analysis-card">
+                        <h4>⏱️ 时间滞后分析</h4>
+                        <div class="timeline-analysis">
+                            <div class="lag-item">
+                                <span>气候 → 农业危机</span>
+                                <span class="lag-days">45天</span>
+                            </div>
+                            <div class="lag-item">
+                                <span>农业危机 → 起义</span>
+                                <span class="lag-days">120天</span>
+                            </div>
+                            <div class="lag-item">
+                                <span>起义激化 → 政权崩坏</span>
+                                <span class="lag-days">240天</span>
+                            </div>
+                            <div class="lag-item highlight">
+                                <span><strong>气候事件 → 政权更替</strong></span>
+                                <span class="lag-days">405天 (≈13.5个月)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h4>📈 事件频率对比</h4>
+                        <canvas id="frequency-chart" width="260" height="150"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2026 地理叙事WebGIS平台 | 小冰河期案例研究</p>
+                <p>数据来源：《明史》、树轮代理数据、农业普查档案</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/map-manager.js"></script>
+    <script src="js/narrative-engine.js"></script>
+    <script src="js/analysis.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

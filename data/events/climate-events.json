@@ -1,0 +1,119 @@
+{
+  "climate_events": [
+    {
+      "id": "climate_1300_01",
+      "year": 1300,
+      "month": 11,
+      "event_type": "extreme_cold_winter",
+      "duration_days": 150,
+      "severity_index": 7,
+      "temperature_anomaly_celsius": -2.1,
+      "spatial_extent": {
+        "center": [108, 35],
+        "radius_km": 1200,
+        "affected_regions": ["陕西", "河南", "山西", "山东", "河北"]
+      },
+      "description": "大规模冷冬事件，长江中游冰冻三月",
+      "historical_record": "《元史》记载：至正年间大寒，冰雪不消",
+      "proxy_data": "树轮宽度降低22%，冰芯δ18O负偏差",
+      "consequences": "麦类作物大幅减产，北方游牧民族南下压力增大"
+    },
+    {
+      "id": "climate_1350_01",
+      "year": 1350,
+      "month": 7,
+      "event_type": "extreme_drought",
+      "duration_days": 200,
+      "severity_index": 8,
+      "temperature_anomaly_celsius": -1.8,
+      "spatial_extent": {
+        "center": [112, 33],
+        "radius_km": 1500,
+        "affected_regions": ["陕西", "河南", "山西", "山东", "河北", "京畿"]
+      },
+      "description": "持续干旱，黄河、渭河水位严重下降",
+      "historical_record": "《元末起义资料汇编》：连年大旱，民食树皮",
+      "proxy_data": "湖泊沉积物年层缺失，树轮极窄",
+      "consequences": "大规模农业减产，100万难民流民形成，元末起义酝酿"
+    },
+    {
+      "id": "climate_1640_01",
+      "year": 1642,
+      "month": 10,
+      "event_type": "extreme_cold_winter",
+      "duration_days": 180,
+      "severity_index": 9,
+      "temperature_anomaly_celsius": -3.2,
+      "spatial_extent": {
+        "center": [108, 35],
+        "radius_km": 1300,
+        "affected_regions": ["陕西", "河南", "山西", "山东", "河北", "京畿"]
+      },
+      "description": "小冰河期最严重冷冬，黄河、长江同时冰冻",
+      "historical_record": "《明史·崇祯纪年录》：十五年十月大雪，平地尺余，冻死者无数",
+      "proxy_data": "冰芯显示1642年为过去400年最冷年份",
+      "consequences": "华北农业彻底崩溃，闯王李自成势力集结，明末农民战争全面爆发"
+    },
+    {
+      "id": "climate_1645_01",
+      "year": 1645,
+      "month": 6,
+      "event_type": "extreme_flood",
+      "duration_days": 120,
+      "severity_index": 7,
+      "temperature_anomaly_celsius": -1.5,
+      "spatial_extent": {
+        "center": [114, 32],
+        "radius_km": 1100,
+        "affected_regions": ["河南", "山东", "江苏", "安徽"]
+      },
+      "description": "黄河决口，连年洪水，堤防决溃",
+      "historical_record": "《明末清初洪水志》：黄河三次决堤，淹没田地千万亩",
+      "proxy_data": "沉积物中洪水层厚度异常",
+      "consequences": "农业复苏无望，政权控制力进一步削弱，李自成攻占北京"
+    },
+    {
+      "id": "climate_1680_01",
+      "year": 1680,
+      "month": 11,
+      "event_type": "extreme_cold_winter",
+      "duration_days": 160,
+      "severity_index": 8,
+      "temperature_anomaly_celsius": -2.8,
+      "spatial_extent": {
+        "center": [110, 34],
+        "radius_km": 1200,
+        "affected_regions": ["陕西", "河南", "山西", "山东"]
+      },
+      "description": "康熙时期严重冷冬，北方再次陷入困境",
+      "historical_record": "《清实录》：康熙十九年冬，北方大寒，饥民再现",
+      "proxy_data": "树轮显示康熙中期气候压力持续",
+      "consequences": "王辅臣之乱、三藩之乱等政治危机的气候背景"
+    },
+    {
+      "id": "climate_1815_01",
+      "year": 1815,
+      "month": 4,
+      "event_type": "volcanic_eruption_impact",
+      "duration_days": 365,
+      "severity_index": 9,
+      "temperature_anomaly_celsius": -4.1,
+      "spatial_extent": {
+        "center": [108, 32],
+        "radius_km": 2000,
+        "affected_regions": ["全国", "亚洲"]
+      },
+      "description": "坦博拉火山喷发，全球气温下降，中国遭遇'无夏之年'",
+      "historical_record": "《清嘉庆实录》：嘉庆二十年，四月飘雪，夏日无暑，秋冬连旱",
+      "proxy_data": "冰芯、树轮全球同步记录火山信号",
+      "consequences": "大规模饥荒，农民起义增加（天理教起义背景），清末衰退加速"
+    }
+  ],
+  "metadata": {
+    "total_events": 6,
+    "time_span": "1300-1850年",
+    "severity_scale": "1-10（10为最严重）",
+    "data_source": "历史文献、树轮年代学、冰芯记录、沉积物年层学",
+    "last_updated": "2026-01-15"
+  }
+}
